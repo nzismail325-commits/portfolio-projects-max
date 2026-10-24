@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import 'vue-toastification/dist/index.css';
+
+:root {
+  --color-bg-main: #f7f5f2;
+  --color-bg-card: #ffffff;
+  --color-accent-primary: #d1a3a4;
+  --color-accent-secondary: #e3c598;
+  --color-text-main: #4a4a4a;
+  --color-text-light: #888;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background-color: #090a0f;
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+html {
+  background-color: #090a0f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', 思源宋体, 'Source Han Serif', serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 页面切换路由用的动画 */
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.slide-down-enter-from,
+.slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* ---- Vue Toastification 全局定制 ---- */
+.Vue-Toastification__container {
+  z-index: 9999;
+}
+.Vue-Toastification__toast {
+  border-radius: 12px !important;
+  padding: 16px 20px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  font-family: 'KaiTi', 楷体, serif !important;
+  font-size: 1rem !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  min-height: auto !important;
+}
+.Vue-Toastification__toast--success {
+  background-color: rgba(72, 187, 120, 0.9) !important;
+}
+.Vue-Toastification__toast--error {
+  background-color: rgba(245, 101, 101, 0.9) !important;
+}
+.Vue-Toastification__toast--warning {
+  background-color: rgba(237, 137, 54, 0.9) !important;
+}
+.Vue-Toastification__toast--info {
+  background-color: rgba(90, 103, 216, 0.9) !important;
+}
+.Vue-Toastification__toast-body {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+.Vue-Toastification__icon {
+  margin-right: 12px !important;
+}
+.Vue-Toastification__close-button {
+  color: #fff !important;
+  opacity: 0.7 !important;
+}
+.Vue-Toastification__close-button:hover {
+  opacity: 1 !important;
+}
+.Vue-Toastification__progress-bar {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  height: 4px !important;
+  bottom: 0 !important;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+@media (max-width: 768px) {
+  .Vue-Toastification__toast {
+    margin-bottom: 0.5rem !important;
+    width: calc(100% - 32px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
