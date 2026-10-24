@@ -1,0 +1,319 @@
+/* 打卡页面公共样式 */
+.checkin-container {
+  display: flex;
+  height: calc(100vh - 60px);
+  background: #f5f7fa;
+}
+
+/* 工作区（全宽） */
+.checkin-container .workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.checkin-container .workspace-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkin-container .header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.checkin-container .header-emoji {
+  font-size: 48px;
+}
+
+.checkin-container .header-text h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #303133;
+  margin: 0 0 8px;
+}
+
+.checkin-container .header-right {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  padding: 12px 20px;
+  border-radius: 12px;
+}
+
+.checkin-container .reward-label {
+  font-size: 14px;
+  color: #606266;
+}
+
+.checkin-container .reward-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #26a69a;
+}
+
+.checkin-container .reward-unit {
+  font-size: 14px;
+  color: #26a69a;
+}
+
+.checkin-container .requirement-alert {
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* GPS 状态 */
+.checkin-container .gps-status {
+  margin-bottom: 20px;
+}
+
+.checkin-container .gps-status .el-tag {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.checkin-container .gps-status .is-loading {
+  animation: checkin-rotate 1s linear infinite;
+}
+
+@keyframes checkin-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 上传区域 */
+.checkin-container .upload-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.checkin-container .upload-dragger {
+  width: 100%;
+  max-width: 500px;
+}
+
+.checkin-container .upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.checkin-container .upload-icon {
+  font-size: 64px;
+  color: #c0c4cc;
+}
+
+.checkin-container .upload-text {
+  text-align: center;
+}
+
+.checkin-container .main-text {
+  font-size: 16px;
+  color: #606266;
+  margin: 0 0 8px;
+}
+
+.checkin-container .sub-text {
+  font-size: 13px;
+  color: #909399;
+  margin: 0;
+}
+
+/* 预览区域 */
+.checkin-container .preview-area {
+  position: relative;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.checkin-container .preview-image {
+  display: block;
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.checkin-container .remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.checkin-container .submit-btn {
+  min-width: 200px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #26a69a 0%, #00897b 100%);
+  border: none;
+  border-radius: 24px;
+}
+
+.checkin-container .submit-btn:hover {
+  background: linear-gradient(135deg, #00897b 0%, #00695c 100%);
+}
+
+/* 核验遮罩 */
+.checkin-container .verify-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.checkin-container .verify-content {
+  text-align: center;
+  max-width: 320px;
+}
+
+.checkin-container .verify-animation {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkin-container .pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #26a69a;
+  border-radius: 50%;
+  animation: checkin-pulse 1.5s ease-out infinite;
+  opacity: 0;
+}
+
+.checkin-container .pulse-ring.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.checkin-container .pulse-ring.delay-2 {
+  animation-delay: 1s;
+}
+
+@keyframes checkin-pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.checkin-container .verify-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #303133;
+  margin: 0 0 12px;
+}
+
+.checkin-container .verify-detail {
+  font-size: 14px;
+  color: #26a69a;
+  margin: 0 0 20px;
+}
+
+.checkin-container .verify-progress {
+  width: 200px;
+  margin: 0 auto;
+}
+
+/* 成功弹窗 */
+.checkin-container .success-content {
+  text-align: center;
+}
+
+.checkin-container .success-icon {
+  font-size: 72px;
+  margin-bottom: 16px;
+  animation: checkin-bounce 0.5s ease;
+}
+
+@keyframes checkin-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.checkin-container .success-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #303133;
+  margin: 0 0 8px;
+}
+
+.checkin-container .success-desc {
+  font-size: 14px;
+  color: #909399;
+  margin: 0 0 24px;
+}
+
+.checkin-container .success-reward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.checkin-container .reward-text {
+  font-size: 14px;
+  color: #606266;
+}
+
+.checkin-container .reward-num {
+  font-size: 36px;
+  font-weight: 700;
+  color: #26a69a;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .checkin-container .workspace {
+    padding: 16px;
+  }
+  
+  .checkin-container .workspace-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .checkin-container .header-emoji {
+    font-size: 36px;
+  }
+  
+  .checkin-container .header-text h2 {
+    font-size: 20px;
+  }
+  
+  .checkin-container .reward-value {
+    font-size: 24px;
+  }
+}
+

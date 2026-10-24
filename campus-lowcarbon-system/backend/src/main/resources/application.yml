@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: campus-lowcarbon-system
+  
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/campus_lowcarbon_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+  
+  # JPA配置
+  jpa:
+    hibernate:
+      ddl-auto: none # 不自动创建表，使用已有数据库
+    show-sql: true # 显示SQL语句
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true # 格式化SQL
+
+  # 文件上传配置
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB  # 单个文件最大5MB
+      max-request-size: 5MB  # 请求最大5MB
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# JWT配置
+jwt:
+  secret: ${JWT_SECRET:} # 必须设置为不少于32字节的随机密钥
+  expiration: 1800000 # Token过期时间（30分钟，单位：毫秒）
+
+# 文件上传配置
+file:
+  upload:
+    path: uploads  # 文件上传路径（相对于项目根目录）
+    url-prefix: /api/uploads  # 文件访问URL前缀（包含context-path）
+
+# 百度地图API配置
+baidu:
+  map:
+    api:
+      key: ${BAIDU_MAP_API_KEY:}
+
+# 日志配置
+logging:
+  level:
+    com.campus.lowcarbon: debug
+    org.springframework.web: info
+    org.hibernate.SQL: debug
+
